@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}My Portfolio{% endblock %}</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    {% comment %} <script src="https://cdn.tailwindcss.com"></script> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'dist/style.css' %}">
 
 </head>
 <body>
@@ -12,31 +13,31 @@
     <nav class="bg-gray-900 text-white">
         <div class="container mx-auto grid grid-cols-3 items-center p-4">
             <!-- Left: Brand -->
-            <a href="{% url 'home' %}" class="text-xl text-blue-400 font-bold hover:text-gray-300">
+            <a href="{% url 'home' %}" class="italic text-3xl text-blue-400 font-semibold hover:text-gray-300">
             My Portfolio
             </a>
             <!-- Center: Logo -->
             <div class="flex justify-center">
                 <a href="{% url 'home' %}">
-                    <img src="{% static 'main/logo.png' %}" class="h-12 w-12 object-contain mix-blend-screen">
+                    <img src="{% static 'logo.png' %}" class="h-12 w-12 object-contain mix-blend-screen hover:bg-blue-500 rounded-full">
                 </a>
             </div>
             <!-- Right: Links -->
             <div class="flex justify-end space-x-6">
                 <a href="{% url 'home' %}" 
-                    class="hover:text-blue-400 {% if request.path == '/' %}text-blue-400 font-semibold{% endif %}">
+                    class="italic hover:text-blue-400 {% if request.path == '/' %}text-blue-400 font-semibold{% endif %}">
                     Home
                 </a>
                 <!-- Left: Links / GitHub -->
                 <a href="{% url 'about' %}" 
-                    class="hover:text-blue-400 {% if request.path == '/about/' %}text-blue-400 font-semibold{% endif %}">
+                    class="italic hover:text-blue-400 {% if request.path == '/about/' %}text-blue-400 font-semibold{% endif %}">
                     About
                 </a>
                 <a href="{% url 'projects' %}" 
-                    class="hover:text-blue-400 {% if request.path == '/projects/' %}text-blue-400 font-semibold{% endif %}">
+                    class="italic hover:text-blue-400 {% if request.path == '/projects/' %}text-blue-400 font-semibold{% endif %}">
                     Projects
                 </a>
-                <a href="https://github.com/Avipatel1" target="_blank" class="hover:text-blue-400">
+                <a href="https://github.com/Avipatel1" target="_blank" class="italic hover:text-blue-400">
                     GitHub
                 </a>
 
