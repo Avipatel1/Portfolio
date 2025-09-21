@@ -4,10 +4,33 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<h1 class="text-4xl font-bold text-center text-blue-600">
-    Welcome to My Portfolio
-</h1>
-<p class="text-center text-gray-700 mt-4">
-    Built with Django + Tailwind 🚀
-</p>
+<section class="min-h-screen flex flex-col justify-center items-center text-center px-4 bg-gray-900 text-white">
+    
+    <!-- Name / Title -->
+    <h1 class="italic text-5xl md:text-6xl font-bold mb-4 text-blue-400 animate-pulse drop-shadow-xl/50 drop-shadow-blue-500">
+        Avi Patel
+    </h1>
+
+    <!-- Tagline -->
+    <p class="italic text-xl md:text-2xl text-gray-300 mb-8">
+        Physics graduate & Django developer passionate about building web applications
+    </p>
+
+    <!-- Call-to-action button -->
+    <a href="{% url 'projects' %}" 
+       class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition drop-shadow-xl/50 drop-shadow-blue-500">
+        View My Projects
+    </a>
+
+    <!-- Optional social links -->
+    <div class="mt-6 flex space-x-4">
+        <a href="https://github.com/Avipatel1" target="_blank" class="hover:text-blue-400 transition">
+            GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/avi-x-patel/" target="_blank" class="hover:text-blue-400 transition">
+            LinkedIn
+        </a>
+    </div>
+
+</section>
 {% endblock %}
