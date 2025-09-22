@@ -9,37 +9,35 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="bg-gray-900 text-white">
-        <div class="container mx-auto grid grid-cols-3 items-center p-4">
-            <!-- Left: Brand -->
-            <a href="{% url 'home' %}" class="animate-pulse italic text-3xl text-blue-400 font-semibold hover:text-gray-300 drop-shadow-xl/50 drop-shadow-blue-500">
-            Portfolio
-            </a>
-            <!-- Center: Logo -->
-            <div class="flex justify-center">
-                <a href="{% url 'home' %}">
+    <nav class="sticky inset-x-0 top-0 z-50 text-white bg-black/80 border-b border-white/10">
+        <div class="container mx-auto flex items-center justify-between p-4">
+            <!-- Left: Logo -->
+            <div class="flex items-center">
+                <a href="{% url 'home' %}" class="animate-pulse">
                     <img src="{% static 'logo.png' %}" class="animate-spin h-12 w-12 object-contain mix-blend-screen bg-blue-500 rounded-full drop-shadow-xl/50 drop-shadow-blue-500">
                 </a>
             </div>
             <!-- Right: Links -->
-            <div class="flex justify-end space-x-6">
+            <div class="flex items-center space-x-6">
                 <a href="{% url 'home' %}" 
-                    class="italic hover:text-blue-400 {% if request.path == '/' %}text-blue-400 font-semibold animate-pulse{% endif %}">
+                    class="italic hover:text-blue-400 {% if request.path == '/' %}text-blue-400 font-semibold animate-pulse drop-shadow-xl/50 drop-shadow-blue-500{% endif %}">
                     Home
                 </a>
                 <!-- Left: Links / GitHub -->
                 <a href="{% url 'about' %}" 
-                    class="italic hover:text-blue-400 {% if request.path == '/about/' %}text-blue-400 font-semibold animate-pulse{% endif %}">
+                    class="italic hover:text-blue-400 {% if request.path == '/about/' %}text-blue-400 font-semibold animate-pulse drop-shadow-xl/50 drop-shadow-blue-500{% endif %}">
                     About
                 </a>
                 <a href="{% url 'projects' %}" 
-                    class="italic hover:text-blue-400 {% if request.path == '/projects/' %}text-blue-400 font-semibold animate-pulse{% endif %}">
+                    class="italic hover:text-blue-400 {% if request.path == '/projects/' %}text-blue-400 font-semibold animate-pulse drop-shadow-xl/50 drop-shadow-blue-500{% endif %}">
                     Projects
+                </a>
+                <a href="{% url 'reports' %}" class="italic hover:text-blue-400 {% if request.path == '/reports/' %}text-blue-400 font-semibold animate-pulse drop-shadow-xl/50 drop-shadow-blue-500{% endif %}">
+                    Scientific Reports
                 </a>
                 <a href="https://github.com/Avipatel1" target="_blank" class="italic hover:text-blue-400">
                     GitHub
                 </a>
-
             </div>
         </div>
     </nav>

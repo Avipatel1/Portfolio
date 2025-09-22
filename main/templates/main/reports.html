@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Scientific Reports{% endblock %}
+
+{% block content %}
+<div class="max-w-5xl mx-auto px-6 py-12">
+    <h1 class="text-3xl italic font-semibold mb-8 text-center rounded-xl drop-shadow-xl/50 drop-shadow-blue-500 text-blue-600">
+        Scientific Reports
+    </h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 drop-shadow-xl/50 drop-shadow-blue-500">
+        {% for report in reports %}
+        <div class="bg-gray-800 shadow-2xl rounded-lg p-6 flex flex-col justify-between">
+            <h2 class="text-xl text-white font-semibold mb-2 hover:text-blue-400">{{ report.title }}</h2>
+            <p class="text-white flex-grow mb-2">{{ report.description }}</p>
+
+            <div class=" mt-4 flex space-x-4">
+                {% if report.github_link %}
+                    <a href="{{ report.github_link }}" target="_blank"
+                       class="bg-green-800 text-white px-4 py-2 rounded hover:bg-green-900 transition">
+                        GitHub
+                    </a>
+                {% endif %}
+                {% if report.pdf_file %}
+                    <a href="{{ report.pdf_file.url }}" target="_blank"
+                    class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+                        Open PDF
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

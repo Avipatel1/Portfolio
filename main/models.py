@@ -14,3 +14,18 @@ class Project(models.Model):
     
     def tag_list(self):
         return [tag.strip() for tag in self.tags.split(",") if tag.strip()]
+    
+    class Meta:
+        ordering = ['title']
+
+class Report(models.Model):
+    title = models.CharField(max_length=200)
+    description = models.TextField()
+    github_link = models.URLField(blank=True, null=True)
+    pdf_file = models.FileField(upload_to='reports/', blank=True)
+
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        ordering = ['title']

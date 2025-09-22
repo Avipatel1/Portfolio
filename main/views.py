@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Project
+from .models import Project, Report
 
 # Create your views here.
 def home(request):
@@ -14,3 +14,9 @@ def projects(request):
         'projects': projects,
     })
 
+# for scientific reports
+def scientific_reports(request):
+    reports = Report.objects.all()
+    return render(request, 'main/reports.html', {
+        'reports': reports,
+    })
